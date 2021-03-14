@@ -1,3 +1,3 @@
 #pragma once
 
-#include "entity.hpp"
+#include <text_screen/entity.hpp>
