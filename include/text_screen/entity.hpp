@@ -1,5 +1,4 @@
-#ifndef LIBTEXTSCREEN_ENTITY_HPP
-#define LIBTEXTSCREEN_ENTITY_HPP
+#pragma once
 
 #include <screen/screen.hpp>
 #include <std/stdcxx.hpp>
@@ -23,10 +22,9 @@ namespace system::io::entity
         TextScreen *print(uint64_t content);
 
         void fresh();
+
     private:
         uint32_t bufferCount = 0;
     };
 
 } // namespace system::io::entity
-
-#endif

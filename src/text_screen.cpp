@@ -4,7 +4,7 @@
 namespace system::io
 {
     entity::TextScreen::TextScreen() : row(height / system::media::entity::Font::fontHeight),
-                                               column(width / system::media::entity::Font::fontWidth) {}
+                                       column(width / system::media::entity::Font::fontWidth) {}
 
     void entity::TextScreen::drawChar(unsigned x, unsigned y, system::media::entity::Color color, char ch)
     {
