@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/module/libstdcxx/include",
+                "${workspaceFolder}/module/libboot/include",
+                "${workspaceFolder}/module/libmemory/include",
+                "${workspaceFolder}/module/libcolor/include",
+                "${workspaceFolder}/module/libscreen/include"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
