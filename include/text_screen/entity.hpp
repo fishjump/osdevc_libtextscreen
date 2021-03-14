@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LIBTEXTSCREEN_ENTITY_HPP
+#define LIBTEXTSCREEN_ENTITY_HPP
 
 #include <screen/screen.hpp>
 #include <std/stdcxx.hpp>
@@ -27,3 +28,5 @@ namespace system::io::entity
     };
 
 } // namespace system::io::entity
+
+#endif
