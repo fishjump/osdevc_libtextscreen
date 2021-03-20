@@ -4,17 +4,17 @@
 
 namespace system::io {
 
-entity::TextScreen::TextScreen(system::media::entity::Color defaultColor,
-                               system::media::entity::Font  defaultFont)
-    : defaultColor(defaultColor), defaultFont(defaultFont),
+entity::TextScreen::TextScreen(system::media::entity::Font  defaultFont,
+                               system::media::entity::Color defaultColor)
+    : defaultFont(defaultFont), defaultColor(defaultColor),
       row(height / system::media::entity::Font::fontHeight),
       column(width / system::media::entity::Font::fontWidth) {}
 
 entity::TextScreen *
 entity::TextScreen::drawChar(const uint32_t &x, const uint32_t &y,
                              const uint8_t &                     ch,
-                             const system::media::entity::Color &color,
-                             const system::media::entity::Font & font) {
+                             const system::media::entity::Font & font,
+                             const system::media::entity::Color &color) {
 
     const uint8_t *charMap = font.getCharMap(ch);
 
@@ -130,7 +130,7 @@ void entity::TextScreen::fresh() {
                             * system::media::entity::Font::fontWidth;
                     int y = (cursor / column)
                             * system::media::entity::Font::fontHeight;
-                    drawChar(x, y, ' ', defaultColor, defaultFont);
+                    drawChar(x, y, ' ', defaultFont, defaultColor);
                     cursor--;
                 }
                 break;
@@ -140,7 +140,7 @@ void entity::TextScreen::fresh() {
                         * system::media::entity::Font::fontWidth;
                 int y = (cursor / column)
                         * system::media::entity::Font::fontHeight;
-                drawChar(x, y, buffer[i], defaultColor, defaultFont);
+                drawChar(x, y, buffer[i], defaultFont, defaultColor);
                 cursor++;
                 break;
             }
@@ -150,7 +150,7 @@ void entity::TextScreen::fresh() {
     // draw cursor
     int x = (cursor % column) * system::media::entity::Font::fontWidth;
     int y = (cursor / column) * system::media::entity::Font::fontHeight;
-    drawChar(x, y, '_', defaultColor, defaultFont);
+    drawChar(x, y, '_', defaultFont, defaultColor);
 }
 
 } // namespace system::io
