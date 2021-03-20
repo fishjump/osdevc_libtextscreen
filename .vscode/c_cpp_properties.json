@@ -3,9 +3,10 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/include",
                 "${workspaceFolder}/module/libstdcxx/include",
                 "${workspaceFolder}/module/libboot/include",
+                "${workspaceFolder}/module/libfont/include",
                 "${workspaceFolder}/module/libmemory/include",
                 "${workspaceFolder}/module/libcolor/include",
                 "${workspaceFolder}/module/libscreen/include"
