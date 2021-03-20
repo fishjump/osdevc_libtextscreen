@@ -9,6 +9,7 @@ namespace system::io::entity {
 
 class TextScreen : public Screen {
 public:
+    TextScreen();
     TextScreen(system::media::entity::Font  defaultFont,
                system::media::entity::Color defaultColor);
 
