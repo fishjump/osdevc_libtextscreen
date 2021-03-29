@@ -13,18 +13,18 @@ entity::TextScreen::TextScreen(system::media::entity::Font  defaultFont,
 
 entity::TextScreen *
 entity::TextScreen::drawChar(const uint32_t &x, const uint32_t &y,
-                             const uint8_t &                     ch,
+                             const char &                        ch,
                              const system::media::entity::Font & font,
                              const system::media::entity::Color &color) {
 
-    const uint8_t *charMap = font.getCharMap(ch);
+    const char *charMap = font.getCharMap(ch);
 
     uint32_t xBoundary = x + system::media::entity::Font::fontWidth,
              yBoundary = y + system::media::entity::Font::fontHeight;
 
     for(uint32_t _y = y, fontMapRowIndex = 0; _y < yBoundary;
         _y++, fontMapRowIndex++) {
-        uint8_t fontMapRow = charMap[fontMapRowIndex];
+        char fontMapRow = charMap[fontMapRowIndex];
         for(uint32_t _x = x; _x < xBoundary; _x++) {
             if(fontMapRow & 0b10000000) {
                 drawPixel(_x, _y, color);
@@ -36,7 +36,7 @@ entity::TextScreen::drawChar(const uint32_t &x, const uint32_t &y,
     return this;
 }
 
-entity::TextScreen *entity::TextScreen::print(const uint8_t *content) {
+entity::TextScreen *entity::TextScreen::print(const char *content) {
     int i = 0;
     while(content[i] != '\0') {
         buffer[bufferCount] = content[i];
@@ -48,7 +48,7 @@ entity::TextScreen *entity::TextScreen::print(const uint8_t *content) {
 }
 
 entity::TextScreen *entity::TextScreen::print(int64_t content) {
-    uint8_t arr[64] = {}; // length is long enought now
+    char arr[64] = {}; // length is long enought now
 
     if(content == 0) {
         arr[0] = '0';
@@ -79,7 +79,7 @@ entity::TextScreen *entity::TextScreen::print(int64_t content) {
 }
 
 entity::TextScreen *entity::TextScreen::print(uint64_t content) {
-    uint8_t arr[64] = {}; // length is long enought now
+    char arr[64] = {}; // length is long enought now
 
     if(content == 0) {
         arr[0] = '0';

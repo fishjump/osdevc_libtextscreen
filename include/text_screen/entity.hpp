@@ -16,14 +16,14 @@ public:
     static const uint32_t MAX_BUFFER_SIZE = 4096;
 
     TextScreen *drawChar(const uint32_t &x, const uint32_t &y,
-                         const uint8_t &ch);
+                         const char &ch);
 
     TextScreen *drawChar(const uint32_t &x, const uint32_t &y,
-                         const uint8_t &                     ch,
+                         const char &                        ch,
                          const system::media::entity::Font & font,
                          const system::media::entity::Color &color);
 
-    TextScreen *print(const uint8_t *content);
+    TextScreen *print(const char *content);
     TextScreen *print(int64_t content);
     TextScreen *print(uint64_t content);
 
