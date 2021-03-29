@@ -3,11 +3,10 @@
 #include <text_screen/text_screen.hpp>
 
 namespace system::io {
-entity::TextScreen::TextScreen() = default;
 
 entity::TextScreen::TextScreen(system::media::entity::Font  defaultFont,
                                system::media::entity::Color defaultColor)
-    : defaultFont(defaultFont), defaultColor(defaultColor),
+    : defaultFont(defaultFont), defaultColor(defaultColor), bufferCount(0),
       row(height / system::media::entity::Font::fontHeight),
       column(width / system::media::entity::Font::fontWidth) {}
 
